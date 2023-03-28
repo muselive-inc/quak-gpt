@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <style>
+            .root {
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .container {
+                flex: 1;
+                border: 1px solid black;
+            }
+
+            .chat {
+                white-space: pre-line;
+                height: 300px;
+                border: 1px solid black;
+            }
+
+            input {
+                min-width: 500px;
+            }
+
+            textarea {
+                width: 100%;
+                min-height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <span>OPENAI_KEY:</span> <input id="openai_key" type="text" />
+        <div class="root">
+            <div class="container">
+                <h1>GPT-3.5</h1>
+                
+                <div>
+                    <h3>System Prompts</h3>
+                    <textarea id="gpt-sys">You are a duck</textarea>
+                </div>
+                <div>
+                    <h3>User Prompts</h3>
+                    <textarea id="gpt-user">Speak like a duck</textarea>
+                </div>
+                <p class="chat" id="gpt-chat">
+                </p>
+                <div>
+                    <input id="gpt-msg"/>
+                    <button id="gpt-send">Send</button>
+                </div>
+                <button id="gpt-reset">Reset</button>
+            </div>
+            <div class="container">
+                <h1>Davinci</h1>
+
+                <h3>Header</h3>
+                <textarea id="davinci-header">
+The following is a conversation with a duck:
+
+User: Hello!
+Duck: Quack!!
+                </textarea>
+
+                <h3>Generated</h3>
+                <p class="chat" id="davinci-chat"></p>
+                <div>
+                    <input id="davinci-msg"/>
+                    <button id="davinci-send">Send</button>
+                </div>
+                <button id="davinci-reset">Reset</button>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
