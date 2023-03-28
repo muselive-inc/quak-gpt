@@ -82,4 +82,6 @@ async function sendCompletion() {
 }
 
 davSend.onclick = sendCompletion;
-davReset.onclick = davChatBox.textContent = '';
+davReset.onclick = () => {
+    davChatBox.textContent = '';
+}
